@@ -11,13 +11,26 @@ class App extends Component {
     ]
   }
   
+  switchNameHandler = () => {
+    // Incorrect
+    // this.state.persons[0].name = 'Matt'
+
+    // Correct
+    this.setState({
+      persons: [
+        { name: 'Matt', age: 24 },
+        { name: 'Maximilian', age: 29 },
+        { name: 'Steven', age: 26 }
+      ]
+    })
+  }
 
   render() {
     return (
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p>This is really working!</p>
-        <button>Switch Name</button>
+        <button onClick={this.switchNameHandler}>Switch Names</button>
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
         <Person name={this.state.persons[1].name} age={this.state.persons[1].age} >My Hobbies: Teaching</Person>
         <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
