@@ -32,7 +32,7 @@ class Persons extends Component {
 
     componentWillUnmount() {
         console.log('[Persons.js] componentWillUnmount')
-      }
+    }
 
     render() {
         console.log('[Persons.js] rendering...')
@@ -43,7 +43,7 @@ class Persons extends Component {
               age={person.age} 
               key={person.id}
               changed={(event) => this.props.changed(event, person.id)} />
-          })
+        })
     }
 }
 
