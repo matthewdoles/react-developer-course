@@ -7,9 +7,17 @@ class Persons extends Component {
         return state
     }
 
-    shouldComponentUpdate(nextPropss, nextState) {
+    // if checking all props then you can import and extend PureComponent
+    shouldComponentUpdate(nextProps, nextState) {
         console.log('[Persons.js] shouldComponentUpdate')
-        return true
+        if (nextProps.persons !== this.props.persons || 
+            nextProps.changed !== this.props.changed || 
+            nextProps.clicked !== this.props.clicked) {
+            return true
+        } 
+        else {
+            return false
+        }
     }
 
     getSnapshotBeforeUpdate(prevProps, prevState) {
