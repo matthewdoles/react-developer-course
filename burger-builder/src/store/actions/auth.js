@@ -7,10 +7,10 @@ export const authStart = () => {
     }
 }
 
-export const authSuccess = (idToken, userId) => {
+export const authSuccess = (token, userId) => {
     return {
         type: actionTypes.AUTH_SUCCESS,
-        idToken: idToken,
+        idToken: token,
         userId: userId
     }
 }
@@ -44,9 +44,9 @@ export const auth = (email, password, isSignup) => {
             password: password,
             returnSecureToken: true
         }
-        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=APIKEY'
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='
         if (!isSignup) {
-            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=APIKEY'
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key='
         }
         axios.post(url, authData)
             .then(res => {
