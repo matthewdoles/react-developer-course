@@ -8,5 +8,14 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: ''
     },
-    devtool: 'cheap-mdoule-eval-source-map'
+    devtool: 'cheap-mdoule-eval-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.js/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
+            }
+        ]
+    }
 }
