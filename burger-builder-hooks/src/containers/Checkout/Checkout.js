@@ -10,7 +10,7 @@ const checkout = props => {
   };
 
   const checkoutContinuedHandler = () => {
-    this.props.history.replace("/checkout/contact-data");
+    props.history.replace("/checkout/contact-data");
   };
 
   let summary = <Redirect to="/" />;
